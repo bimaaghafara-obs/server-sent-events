@@ -2,7 +2,7 @@ require('dotenv').config()
 const cors = require('cors');
 const express = require('express')
 
-const feedRoutes = require('./routes/feeds')
+const transactionRoutes = require('./routes/transactions')
 
 // express app
 const app = express()
@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/api/feeds', feedRoutes)
+app.use('/api/transactions', transactionRoutes)
 
 // app
 app.listen(process.env.PORT, () => {

@@ -1,10 +1,10 @@
 import React from 'react';
-import Feeds from './components/feeds';
+import Transactions from './components/transactions';
 
 function App() {
   return (
     <div className="App">
-      <Feeds />
+      <Transactions />
     </div>
   );
 }
