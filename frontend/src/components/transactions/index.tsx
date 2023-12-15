@@ -1,3 +1,4 @@
+import { enqueueSnackbar } from 'notistack';
 import React, { useState } from 'react';
 
 const notificationAudio = new Audio('/notification.mp3');
@@ -41,6 +42,7 @@ function Transactions() {
 	React.useEffect(() => {
     if (lastUpdateTransaction) {
       notificationAudio.play().then(() => {
+        enqueueSnackbar('There is a new transaction that needs to be authorized.');
         console.log("New Transaction", transactions[0]);
       }).catch((error) => {
         console.log({ error });
