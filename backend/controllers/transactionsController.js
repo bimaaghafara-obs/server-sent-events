@@ -20,21 +20,6 @@ const streamTransactions = async (req, res) => {
   });
   res.flushHeaders();
 
-  /** interval section start **/
-  // const interval = setInterval(() => {
-  //   const newTransaction = {
-  //     id: transactions.length + 1,
-  //     desc: `transaction-${transactions.length + 1}`
-  //   };
-  //   transactions.unshift(newTransaction);
-  //   res.write(`data: ${JSON.stringify(newTransaction)}\n\n`);
-  // }, 5000);
-  // res.on("close", () => {
-  //   clearInterval(interval);
-  //   res.end();
-  // });
-  /** interval section end */
-
   connectedClients.push(res);
 
   res.on("close", () => {
